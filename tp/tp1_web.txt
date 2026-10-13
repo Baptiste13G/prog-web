@@ -1,0 +1,52 @@
+pour chacun des exercices suivants, on soumettra le code aux linters jslint (lien sur la page du cours) et jshint
+le but est d'améliorer la présentation de votre code et de détecter les erreurs.
+Vous pouvez utiliser n'importe quel éditeur de code. Pour tester vos fonctions vous pouvez copier le code dans la console de votre navigateur.
+Exercice 1
+Écrire une fonction maxi(n,m) qui renvoie la plus grand des deux valeurs
+
+maxi(2,3);   // 3
+maxi(2,2); // 2
+maxi(2,-2) // 2
+Exercice 2
+Écrire une fonction abs( n ) renvoyant la valeur absolue d'un nombre n.
+
+abs(-4);   // 4
+abs(-0);   // 0
+abs(0);   // 0
+abs(3.14); // 3.14
+Exercice 3
+Écrire une fonction harm( n ) calculant la somme des n premiers termes de la suite harmonique.
+Écrire une fonction harmAlt( n ) calculant la somme des n premiers termes de la suite harmonique alternée.
+Sachant que la suite harmonique alternée converge vers -ln(2), écrire une fonction nbIterHarmAlt(epsilon) calculant le nombre de pas nécessaire pour atteindre une précision epsilon de la valeur de -ln(2).
+NB: Math.log(x) donne le logarithme népérien de x.
+harm(0);   // 0
+harm(1);   // 1
+harm(100)  // 5.187377517639621
+harm(1000) // 7.485470860550343
+harmAlt(0);     // 0
+harmAlt(1);     // -1
+harmAlt(1000)   // -0.6926474305598223
+harmAlt(100000) // -0.6931421805849816
+nbIterHarmAlt(1);      // 1
+nbIterHarmAlt(0.1);    // 5
+nbIterHarmAlt(0.001);  // 500
+nbIterHarmAlt(0.00001); //  50000
+
+Exercice 4
+
+Écrire une fonction celsiusToFahrenheit(n,m) qui affiche sur la console la table de
+conversion des degrés Celsius en degrés Fahrenheit de 0 à n avec un pas paramétrable m
+
+Fahrenheit= (9.0×Celsius)/5.0 + 32.0
+
+Exercice 5 (bonus)
+Le but de cet exercice est d'écrire une fonction qui transforme une valeur binaire abrégée en sa valeur non abrégée, à l'aide de la structure de contrôle switch
+
+Par exemple : 2K = 2048 (2 x 1024).
+
+Nous allons utiliser deux paramètres :
+
+quantity représente la quantité,
+unit représente l'unité ("K", "M", "G" ou "T"),
+la fonction renvoie le résultat.
+si unit prend une valeur en dehors de celles données, renvoyer false

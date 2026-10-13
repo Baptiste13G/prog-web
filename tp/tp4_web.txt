@@ -1,0 +1,117 @@
+Exercice 1 : Tableaux de random
+Écrire la fonction randomInt1(max) qui renvoie un nombre entier tiré aléatoirement entre 0 (inclu) et max (exclu). (NB on utilisera pour cela la méthode Math.random())
+Écrire la fonction randomInt2(min, max) qui renvoie un nombre entier tiré aléatoirement entre min (inclu) et max (exclu).
+Écrire la fonction randomIntArray(min, max, n) qui renvoie un tableau de n entiers tirés aléatoirement compris entre min (inclu) et max exclu.
+Écrire la fonction moyenne(tab) qui prend comme argument un tableau tab normalement indicé et renvoyant la moyenne de ses éléments. La tester plusieurs fois avec des tableaux d'entiers générés aléatoirement de 10.000 éléments compris entre 1 (inclu) et 101 (exclu). Que remarquer ? Qu'en déduire ?
+Écrire la fonction occurences(tab, min, max) prenant comme arguments un tableau tab normalement indicé, contenant des nombres entiers entre min (inclus) et max (exclus) et qui renvoie un objet associant à chaque valeur comprise entre min et max le nombre d'occurrences de cette valeur dans le tableau. La tester plusieurs fois avec des tableaux d'entiers générés aléatoirement de 10.000 éléments compris entre 1 (inclu) et 101 (exclu). Que remarquer ? Qu'en déduire ?
+Écrire la fonction stats(tab, min, max) prenant comme arguments un tableau tab normalement indicé, contenant potentiellement des nombres entiers entre min (inclus) et max (exclus) et qui renvoie un objet associant à chaque valeur comprise entre min et max la proportion d'occurrences de cette valeur dans le tableau. La tester plusieurs fois avec des tableaux d'entiers générés aléatoirement de 10.000 éléments compris entre 1 (inclu) et 101 (exclu). Que remarquer ? Qu'en déduire ?
+/* Exemples */
+randomInt1(1);    // 0
+randomInt2(1, 3); // 2
+var tab = randomIntArray(1, 11, 10);
+tab; // [ 4, 6, 2, 8, 7, 2, 2, 9, 10, 3 ]
+moyenne(tab); // 5.3
+occurences(tab, 1, 11); // { '1': 0, '2': 3, '3': 1, '4': 1, '5': 0, '6': 1, '7': 1, '8': 1, '9': 1, '10': 1 }
+stats(tab, 1, 11); // { '1': 0, '2': 0.3, '3': 0.1, '4': 0.1, '5': 0, '6': 0.1, '7': 0.1, '8': 0.1, '9': 0.1, '10': 0.1 }
+
+Exercice 2 - Excusotron
+Écrire une fonction excusotron(textArray) prenant le tableau textArray de tableaux de schèmes de phrases et produisant une excuse aléatoire, composée à chaque fois d'un des éléments de chaque tableau de schèmes.
+
+/* Exemple */
+var pipoText1 = [["Ce matin,", "Tantôt,"], ["j'ai eu une panne"], ["de réveil.", "d'oreiller."]];
+
+excusotron(pipoText1);
+'Ce matin, j'ai eu une panne d'oreiller. '
+
+var pipoText2 = [ [ "Tôt dans la matinée,", "Vers 4h du matin,", "Hier soir,", "Tard dans la nuit,", "En pleine nuit," ], [ "alors que", "pendant que", "au moment où", "tandis que", "comme", "cependant que" ], [ "je dormais après avoir relu pour la 3ème fois la Comédie humaine de Balzac,", "je sommeillais en attendant de me lever pour mon footing quotidien de 5h du matin,", "je somnollais après avoir passé en revue une étude du Figaro Economique,", "je m'étais assoupi sur une des oeuvres passionnantes de Friedrich Wilheim Nietzsche,", "je me reposais après avoir pratiqué 2h intenses de Squash,", "je m'étais endormis sur un article fort intéressant du Herald Tribune,", "je faisais un somme après avoir fini de traduire Guerre & Paix en Mandarin,", "je m'étais assoupi sur la brillante émission 'Chasse et Pêche'," ], [ "mon chat", "mon chien", "ma vieille grand-mère", "mon perroquet", "mon sanglier domestique", "ma belle-mère", "mon iguane asthmatique" ], [ "a joué avec le fil électrique de", "s'est pris les pates dans le fil électrique de", "a appuyé par mégarde sur le bouton OFF de", "a effleuré par inadvertance le Snooze de", "a renversé du Coca sur", "a fait tomber dans la baignoire", "a rebooté" ], [ "mon radio-réveil qui n'a donc pas sonné, et ce n'est" ], [ "que lorsque les pompiers sont entrés en hurlant 'AU FEU!'", "qu'au moment où les huissiers (venus pour le voisin) ont enfoncé la porte", "qu'avec l'arrivée du SAMU, venu chercher ma grand-mère", "qu'après l'entrée fracassante de la SPA", "qu'au moment où les pompes-funèbres (venues chercher ma belle-mère) ont sonné à la porte", "que quand le plombier est venu réparer l'inondation", "qu'avec la visite d'un représentant du Téléthon venu me remercier pour mon généreux don de la veille" ], [ "que je me suis réveillé, trop en retard pour être à l'heure à la fac.", "que j'ai repris connaissance et me suis précipité tardivement à la fac.", "que j'ai réalisé qu'il était trop tard pour venir à la fac ce matin.", "que j'ai bondi hors de mon lit pour me ruer à la fac." ] ];
+
+// source texte: http://richard.geneva-link.ch/excusotron.html
+
+excusotron(pipoText2);
+
+'Tard dans la nuit, cependant que je faisais un somme après avoir fini de traduire Guerre & Paix en Mandarin, ma vieille grand-mère a effleuré par inadvertance le Snooze de mon radio-réveil qui n'a donc pas sonné, et ce n'est que quand le plombier est venu réparer l'inondation que je me suis réveillé, trop en retard pour être à l'heure à la fac. '
+
+
+
+2e partie : énoncé du problème génération de texte
+Conditions d’achèvement
+Version 1 :
+On souhaite écrire un générateur de texte automatique basé sur la probabilité de succession des caractères dans un texte de référence.
+
+Par exemple, dans le texte suivant :
+
+Va, cours, vole et nous venge.
+
+On a, pour chacune des lettres, le successeur suivant :
+
+au début -> V
+V -> a
+a -> ,
+, -> espace espace
+espace -> c v e n v
+c -> o
+o -> u l u
+u -> r s
+r -> s
+s -> ,
+v -> o e
+l -> e
+e -> espace t n .
+t -> espace
+n -> o g
+g -> e
+. -> (rien)
+
+On peut donc générer un texte automatiquement en regardant le caractère courant et en prenant, au hasard, un de caractères qui peut suivre. Par exemple, avec le modèle ci-dessus :
+
+au début : On commence forcément par "V".
+V
+De V, on va forcément à "a"
+"Va"
+De a, on va forcément à virgule
+"Va,"
+de virgule, on va forcément à espace
+"Va, "
+d'espace, on choisit au hasard un caractère parmi "c", "v", "e", "n", et "v" ("v" apparaît deux fois, il a plus de chance d'être choisi)
+"Va, v"
+De "v", on va vers "o" ou "e"
+"Va, vo"
+De o, on va vers "u" "l" ou "u"
+"Va, vou"
+De u, on va vers "r" ou "s"
+"Va, vour"
+etc, jusqu'à ce qu'on atteigne le marqueur de fin (en l'occurrence, le point).
+On obtiendra, par exemple, "Va, vours, colet ve."
+
+Version 2
+On a choisi comme clé des caractères isolés. On peut également choisir des séquences de plusieurs caractères consécutifs :
+
+au début -> V
+Va -> ,
+a, -> espace
+, espace -> c v
+espace c -> o
+co -> u
+ou -> r s
+ur -> s
+rs -> ,
+s, -> espace
+espace v -> o e
+ol -> e
+
+etc.
+
+Ici, on pourra générer, par exemple: "Va, vole et nours, venge."
+
+Exemple sur un texte plus long :
+
+"Ne réplique point, je connais ton amour,
+Mais qui peut vivre infâme est indigne du jour ;
+Plus l'offenseur est cher, et plus grande est l'offense.
+Enfin tu sais l'affront, et tu tiens la vengeance :
+Je ne te dis plus rien. Venge-moi, venge-toi ;
+Montre-toi digne fils d'un père tel que moi.
+Accablé des malheurs où le destin me range,
+Je vais les déplorer. Va, cours, vole, et nous venge."
+
+-> Ne digne ne fils me riens grangeance réplique te et père venseur et plus l'affenseurs plus les voles

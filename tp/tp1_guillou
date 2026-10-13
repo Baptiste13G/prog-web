@@ -1,0 +1,50 @@
+//Exercice 1:
+
+function maxi(n,m){
+    if(n>m){
+        return n;
+    }
+    return m;
+}
+
+//Exercice 2:
+
+function abs(n){
+    if(n<=0){
+        return n*-1;
+    }
+    return n;
+}
+
+//Exercice 3:
+
+function harm(n){
+    if(n==0){
+        return 0;
+    }
+    return 1/n + harm(n-1);
+}
+
+function harmAlt(n){ //Pas réussi pour le harmAlt(100000); Uncaught RangeError: Maximum call stack size exceeded
+    if(n==0){
+        return 0;
+    }
+    if(n%2==0){
+        return 1/n + harmAlt(n-1);
+    }
+    return 1/-n + harmAlt(n-1);
+}
+
+function nbIterHarmAlt(epsilon){ //Pas compris /réussi 
+
+}
+
+//Exercice 4:
+
+function celsiusToFahrenheit(n,m){
+    for(i=0;i<=n;i+=m){
+        f=(9.0*i)/5.0 + 32.0;
+        console.table(i,f);
+    }
+}
+

@@ -1,0 +1,18 @@
+Exercice 1 – Code de César
+Écrire une fonction codeCesar(msg, key) qui code la chaîne en majuscules msg au moyen de la clé key en utilisant le code de César.
+Écrire une fonction decodeCesar(msg, key) qui décode la chaîne en majuscules msg au moyen de la clé key en utilisant le code de César.
+Écrire une fonction codeCesar2(msg, key) (resp. decodeCesar2(msg, key)) qui code (resp. décode) la chaîne en majuscules msg et contenant potentiellement des espaces au moyen de la clé key en utilisant le code de César.
+Écrire une fonction codeCesar3(msg, key, blanks) (resp. decodeCesar3msg, key, blanks)) qui code (resp. décode) la chaîne en majuscules msg au moyen de la clé key en utilisant le code de César et qui laissent les caractères de la chaîne blanks en clair.
+codeCesar('COUCOU', 3);   // 'FRXFRX'
+codeCesar('ZORRO', 3);    // 'CRUUR'
+decodeCesar2('CRUUR', 3); // 'ZORRO'
+
+codeCesar2('COUCOU TOUT LE MONDE', 3); // 'FRXFRX WRXW OH PRQGH'
+codeCesar3('COUCOU, TOUT LE MONDE !', 3, ', !'); // 'FRXFRX, WRXW OH PRQGH !'
+Exercice 2 – Code par substitution
+Écrire une fonction codeSubstitution(msg, key) (resp. decodeSubstitution(msg, key)) qui renvoie le code (resp. décodage) par substitution de la chaîne msg contenant des majuscules et des espaces par la clé key (la première lettre montre comment est codé le 'A', la seconde le 'B', etc.).
+
+codeSubstitution('CECI EST UN TEST', 'AZERTYUIOPQSDFGHJKLMWXCVBN'); // ETEO TLM WF MTLM
+decodeSubstitution('&"&! "¨ù `_ @`ù^" ù"¨ù', '@#&é"(§è!çà)-_$*€^¨ù`£=+:/' // 'CECI EST UN AUTRE TEST',
+
+coder une fonction de chiffrement et une fonction de déchiffrement grâce à la table de Vigenère

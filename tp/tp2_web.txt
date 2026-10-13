@@ -1,0 +1,26 @@
+Exercice 1
+Écrire une fonction estPalindrome(mot) vérifiant si mot est un palindrome.
+Écrire une fonction estPalindrome2(phrase) vérifiant si une phrase donnée est un palindrome.
+estPalindrome('toto');  // false
+estPalindrome('radar'); // true
+estPalindrome('abba');  // true
+estPalindrome('SOS');   // true
+estPalindrome2('esope reste elu par cette crapule et se repose'); // true
+estPalindrome2('Eh ca va la vache ?'); // true
+Exercice 2
+sans utiliser de fonctions natives comme split ou replace (indexOf et includes autorisées)
+
+Écrire une fonction compteMots(s) qui compte le nombre de mots (séparés par un seul espace) contenus dans une chaîne s .
+
+Écrire une fonction compteMots2(s) qui compte le nombre de mots (séparés par au moins un espace) contenus dans une chaîne s.
+
+Écrire une fonction compteMots3(s, sep) qui compte le nombre de mots séparés par les séparateurs contenus dans la chaîne sep.
+
+compteMots('la maman de Colette et de Daniel'); // 7
+compteMots2(' la maman    de Colette et de   Daniel  '); // 7
+compteMots3('Ceci, mais oui, est une phrase !', ' !,') // 6
+
+Exercice 3
+
+Écrire une fonction supprime(chaine,pattern) qui renvoie une copie de chaine où on a supprimé les occurrences de pattern (sans utiliser replace())
+Ecrire une fonction remplace(chaine, pattern1, pattern2) qui renvoie une copie de chaine en remplacant les occurrences de pattern1 par pattern2 (idem)
