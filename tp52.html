@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            var i=5;
+            document.writeln("<pre>",5);
+            document.writeln("Bonjour, Monde !");
+            document.writeln("i = ", i);
+            document.writeln("pi = ", Math.PI);
+            document.writeln("entier random entre 1 et 100 = ", Math.floor(Math.random() * (101-1 - 0 + 1)) + 0);
+            const reponse = window.prompt("Entre un chiffre :");
+            const nombre = Number(reponse);
+            const test = 35
+            if(nombre>test){
+                window.alert("Il fait chaud il fait " + nombre + " degrès !");
+            }
+            else{
+                window.alert("C'est encore respirable comme température, car il fait " + nombre + " degrès.");
+            }
+            
+            const paletteWindow = window.open(
+            "panels.html",
+            "Panels",
+            "left=0, top=0, width=200",
+            );
+            const screenAvailWidth = window.screen.availWidth;
+
+            // Crude way to check that the screen is at least 1024x768
+            if (window.screen.width >= 1024 && window.screen.height >= 768) {
+            // Resolution is 1024x768 or above
+            }
+            document.writeln("Ton écran fait "+paletteWindow+" de haut, "+screenAvailWidth+" de horizontale.");
+
+        </script>
+    </body>
+</html>
